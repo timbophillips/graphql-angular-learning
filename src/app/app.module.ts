@@ -4,17 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
-import { NamesComponent } from './names.component'
+import { NamesComponent } from './names.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { NameEditorComponent } from './name-editor/name-editor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NamesComponent
+    NamesComponent,
+    NameEditorComponent
   ],
   imports: [
     BrowserModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

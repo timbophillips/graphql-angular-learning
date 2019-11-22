@@ -9,7 +9,6 @@ import { FormControl, FormGroup } from '@angular/forms';
     </label>
       <input type="text" formControlName="name">
     <p>
-  Value: {{ name.value }}
 </p>
   `,
   styles: []

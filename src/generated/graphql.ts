@@ -61,8 +61,10 @@ export type Mutation_RootUpdate_NamesArgs = {
 /** columns and relationships of "names" */
 export type Names = {
    __typename?: 'names',
+  colour?: Maybe<Scalars['String']>,
   id: Scalars['Int'],
   name: Scalars['String'],
+  number?: Maybe<Scalars['Int']>,
 };
 
 /** aggregated selection of "names" */
@@ -120,11 +122,13 @@ export type Names_Arr_Rel_Insert_Input = {
 export type Names_Avg_Fields = {
    __typename?: 'names_avg_fields',
   id?: Maybe<Scalars['Float']>,
+  number?: Maybe<Scalars['Float']>,
 };
 
 /** order by avg() on columns of table "names" */
 export type Names_Avg_Order_By = {
   id?: Maybe<Order_By>,
+  number?: Maybe<Order_By>,
 };
 
 /** Boolean expression to filter rows from the table "names". All fields are combined with a logical 'AND'. */
@@ -132,8 +136,10 @@ export type Names_Bool_Exp = {
   _and?: Maybe<Array<Maybe<Names_Bool_Exp>>>,
   _not?: Maybe<Names_Bool_Exp>,
   _or?: Maybe<Array<Maybe<Names_Bool_Exp>>>,
+  colour?: Maybe<String_Comparison_Exp>,
   id?: Maybe<Int_Comparison_Exp>,
   name?: Maybe<String_Comparison_Exp>,
+  number?: Maybe<Int_Comparison_Exp>,
 };
 
 /** unique or primary key constraints on table "names" */
@@ -145,38 +151,49 @@ export enum Names_Constraint {
 /** input type for incrementing integer columne in table "names" */
 export type Names_Inc_Input = {
   id?: Maybe<Scalars['Int']>,
+  number?: Maybe<Scalars['Int']>,
 };
 
 /** input type for inserting data into table "names" */
 export type Names_Insert_Input = {
+  colour?: Maybe<Scalars['String']>,
   id?: Maybe<Scalars['Int']>,
   name?: Maybe<Scalars['String']>,
+  number?: Maybe<Scalars['Int']>,
 };
 
 /** aggregate max on columns */
 export type Names_Max_Fields = {
    __typename?: 'names_max_fields',
+  colour?: Maybe<Scalars['String']>,
   id?: Maybe<Scalars['Int']>,
   name?: Maybe<Scalars['String']>,
+  number?: Maybe<Scalars['Int']>,
 };
 
 /** order by max() on columns of table "names" */
 export type Names_Max_Order_By = {
+  colour?: Maybe<Order_By>,
   id?: Maybe<Order_By>,
   name?: Maybe<Order_By>,
+  number?: Maybe<Order_By>,
 };
 
 /** aggregate min on columns */
 export type Names_Min_Fields = {
    __typename?: 'names_min_fields',
+  colour?: Maybe<Scalars['String']>,
   id?: Maybe<Scalars['Int']>,
   name?: Maybe<Scalars['String']>,
+  number?: Maybe<Scalars['Int']>,
 };
 
 /** order by min() on columns of table "names" */
 export type Names_Min_Order_By = {
+  colour?: Maybe<Order_By>,
   id?: Maybe<Order_By>,
   name?: Maybe<Order_By>,
+  number?: Maybe<Order_By>,
 };
 
 /** response of any mutation on the table "names" */
@@ -203,107 +220,133 @@ export type Names_On_Conflict = {
 
 /** ordering options when selecting data from "names" */
 export type Names_Order_By = {
+  colour?: Maybe<Order_By>,
   id?: Maybe<Order_By>,
   name?: Maybe<Order_By>,
+  number?: Maybe<Order_By>,
 };
 
 /** select columns of table "names" */
 export enum Names_Select_Column {
   /** column name */
+  Colour = 'colour',
+  /** column name */
   Id = 'id',
   /** column name */
-  Name = 'name'
+  Name = 'name',
+  /** column name */
+  Number = 'number'
 }
 
 /** input type for updating data in table "names" */
 export type Names_Set_Input = {
+  colour?: Maybe<Scalars['String']>,
   id?: Maybe<Scalars['Int']>,
   name?: Maybe<Scalars['String']>,
+  number?: Maybe<Scalars['Int']>,
 };
 
 /** aggregate stddev on columns */
 export type Names_Stddev_Fields = {
    __typename?: 'names_stddev_fields',
   id?: Maybe<Scalars['Float']>,
+  number?: Maybe<Scalars['Float']>,
 };
 
 /** order by stddev() on columns of table "names" */
 export type Names_Stddev_Order_By = {
   id?: Maybe<Order_By>,
+  number?: Maybe<Order_By>,
 };
 
 /** aggregate stddev_pop on columns */
 export type Names_Stddev_Pop_Fields = {
    __typename?: 'names_stddev_pop_fields',
   id?: Maybe<Scalars['Float']>,
+  number?: Maybe<Scalars['Float']>,
 };
 
 /** order by stddev_pop() on columns of table "names" */
 export type Names_Stddev_Pop_Order_By = {
   id?: Maybe<Order_By>,
+  number?: Maybe<Order_By>,
 };
 
 /** aggregate stddev_samp on columns */
 export type Names_Stddev_Samp_Fields = {
    __typename?: 'names_stddev_samp_fields',
   id?: Maybe<Scalars['Float']>,
+  number?: Maybe<Scalars['Float']>,
 };
 
 /** order by stddev_samp() on columns of table "names" */
 export type Names_Stddev_Samp_Order_By = {
   id?: Maybe<Order_By>,
+  number?: Maybe<Order_By>,
 };
 
 /** aggregate sum on columns */
 export type Names_Sum_Fields = {
    __typename?: 'names_sum_fields',
   id?: Maybe<Scalars['Int']>,
+  number?: Maybe<Scalars['Int']>,
 };
 
 /** order by sum() on columns of table "names" */
 export type Names_Sum_Order_By = {
   id?: Maybe<Order_By>,
+  number?: Maybe<Order_By>,
 };
 
 /** update columns of table "names" */
 export enum Names_Update_Column {
   /** column name */
+  Colour = 'colour',
+  /** column name */
   Id = 'id',
   /** column name */
-  Name = 'name'
+  Name = 'name',
+  /** column name */
+  Number = 'number'
 }
 
 /** aggregate var_pop on columns */
 export type Names_Var_Pop_Fields = {
    __typename?: 'names_var_pop_fields',
   id?: Maybe<Scalars['Float']>,
+  number?: Maybe<Scalars['Float']>,
 };
 
 /** order by var_pop() on columns of table "names" */
 export type Names_Var_Pop_Order_By = {
   id?: Maybe<Order_By>,
+  number?: Maybe<Order_By>,
 };
 
 /** aggregate var_samp on columns */
 export type Names_Var_Samp_Fields = {
    __typename?: 'names_var_samp_fields',
   id?: Maybe<Scalars['Float']>,
+  number?: Maybe<Scalars['Float']>,
 };
 
 /** order by var_samp() on columns of table "names" */
 export type Names_Var_Samp_Order_By = {
   id?: Maybe<Order_By>,
+  number?: Maybe<Order_By>,
 };
 
 /** aggregate variance on columns */
 export type Names_Variance_Fields = {
    __typename?: 'names_variance_fields',
   id?: Maybe<Scalars['Float']>,
+  number?: Maybe<Scalars['Float']>,
 };
 
 /** order by variance() on columns of table "names" */
 export type Names_Variance_Order_By = {
   id?: Maybe<Order_By>,
+  number?: Maybe<Order_By>,
 };
 
 /** column ordering options */
@@ -422,7 +465,7 @@ export type NamesQuery = (
   { __typename?: 'query_root' }
   & { names: Array<(
     { __typename?: 'names' }
-    & Pick<Names, 'id' | 'name'>
+    & Pick<Names, 'id' | 'name' | 'number' | 'colour'>
   )> }
 );
 
@@ -433,17 +476,19 @@ export type NamesSubscriptionSubscription = (
   { __typename?: 'subscription_root' }
   & { names: Array<(
     { __typename?: 'names' }
-    & Pick<Names, 'id' | 'name'>
+    & Pick<Names, 'id' | 'name' | 'number' | 'colour'>
   )> }
 );
 
 export type AddNameMutationVariables = {
-  name: Scalars['String']
+  name?: Maybe<Scalars['String']>,
+  number?: Maybe<Scalars['Int']>,
+  color?: Maybe<Scalars['String']>
 };
 
 
 export type AddNameMutation = (
-  { __typename?: 'mutation_root' }
+  { __typename: 'mutation_root' }
   & { insert_names: Maybe<(
     { __typename?: 'names_mutation_response' }
     & { returning: Array<(
@@ -454,12 +499,12 @@ export type AddNameMutation = (
 );
 
 export type DelNameMutationVariables = {
-  id: Scalars['Int']
+  id?: Maybe<Scalars['Int']>
 };
 
 
 export type DelNameMutation = (
-  { __typename?: 'mutation_root' }
+  { __typename: 'mutation_root' }
   & { delete_names: Maybe<(
     { __typename?: 'names_mutation_response' }
     & { returning: Array<(
@@ -472,9 +517,11 @@ export type DelNameMutation = (
 
 export const NamesDocument = gql`
     query Names {
-  names(order_by: {id: asc}, where: {}) {
+  names {
     id
     name
+    number
+    colour
   }
 }
     `;
@@ -491,6 +538,8 @@ export const NamesSubscriptionDocument = gql`
   names {
     id
     name
+    number
+    colour
   }
 }
     `;
@@ -503,8 +552,9 @@ export const NamesSubscriptionDocument = gql`
     
   }
 export const AddNameDocument = gql`
-    mutation addName($name: String!) {
-  insert_names(objects: {name: $name}) {
+    mutation addName($name: String, $number: Int = 0, $color: String = "black") {
+  __typename
+  insert_names(objects: {colour: $color, name: $name, number: $number}) {
     returning {
       id
     }
@@ -520,7 +570,8 @@ export const AddNameDocument = gql`
     
   }
 export const DelNameDocument = gql`
-    mutation delName($id: Int!) {
+    mutation delName($id: Int) {
+  __typename
   delete_names(where: {id: {_eq: $id}}) {
     returning {
       id

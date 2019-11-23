@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
-  template: `<app-name-editor></app-name-editor> `
+  template: `<app-names></app-names> `
   ,
   styles: []
 })

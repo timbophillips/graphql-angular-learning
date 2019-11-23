@@ -1,7 +1,9 @@
 query Names {
-  names(order_by: {id: asc}, where: {}) {
+  names {
     id
     name
+    number
+    colour
   }
 }
 
@@ -9,18 +11,22 @@ subscription NamesSubscription {
   names {
     id
     name
+    number
+    colour
   }
 }
 
-mutation addName($name: String!) {
-  insert_names(objects: {name: $name}) {
+mutation addName($name: String, $number: Int = 0, $color: String = "black") {
+  __typename
+  insert_names(objects: {colour: $color, name: $name, number: $number}) {
     returning {
       id
     }
   }
 }
 
-mutation delName($id: Int!) {
+mutation delName($id: Int) {
+  __typename
   delete_names(where: {id: {_eq: $id}}) {
     returning {
       id

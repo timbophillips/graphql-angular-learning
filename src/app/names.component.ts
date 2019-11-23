@@ -19,6 +19,15 @@ import { NamesGQL, NamesSubscriptionGQL, AddNameGQL, DelNameGQL } from '../gener
       {{
         item.name
       }}
+      Color:
+      {{
+        item.colour
+      }}
+      Number:
+      {{
+        item.number
+      }}
+
       <button (click)="delName(item.id)">delete</button>
     </ul>
   `,

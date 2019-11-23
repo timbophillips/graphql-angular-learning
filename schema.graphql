@@ -1,5 +1,5 @@
 # source: http://localhost:8080/v1/graphql
-# timestamp: Sat Nov 16 2019 11:42:45 GMT+0800 (Australian Western Standard Time)
+# timestamp: Sat Nov 23 2019 09:24:40 GMT+0800 (Australian Western Standard Time)
 
 schema {
   query: query_root
@@ -62,8 +62,10 @@ type mutation_root {
 columns and relationships of "names"
 """
 type names {
+  colour: String
   id: Int!
   name: String!
+  number: Int
 }
 
 """
@@ -119,6 +121,7 @@ input names_arr_rel_insert_input {
 """aggregate avg on columns"""
 type names_avg_fields {
   id: Float
+  number: Float
 }
 
 """
@@ -126,6 +129,7 @@ order by avg() on columns of table "names"
 """
 input names_avg_order_by {
   id: order_by
+  number: order_by
 }
 
 """
@@ -135,8 +139,10 @@ input names_bool_exp {
   _and: [names_bool_exp]
   _not: names_bool_exp
   _or: [names_bool_exp]
+  colour: String_comparison_exp
   id: Int_comparison_exp
   name: String_comparison_exp
+  number: Int_comparison_exp
 }
 
 """
@@ -152,42 +158,53 @@ input type for incrementing integer columne in table "names"
 """
 input names_inc_input {
   id: Int
+  number: Int
 }
 
 """
 input type for inserting data into table "names"
 """
 input names_insert_input {
+  colour: String
   id: Int
   name: String
+  number: Int
 }
 
 """aggregate max on columns"""
 type names_max_fields {
+  colour: String
   id: Int
   name: String
+  number: Int
 }
 
 """
 order by max() on columns of table "names"
 """
 input names_max_order_by {
+  colour: order_by
   id: order_by
   name: order_by
+  number: order_by
 }
 
 """aggregate min on columns"""
 type names_min_fields {
+  colour: String
   id: Int
   name: String
+  number: Int
 }
 
 """
 order by min() on columns of table "names"
 """
 input names_min_order_by {
+  colour: order_by
   id: order_by
   name: order_by
+  number: order_by
 }
 
 """
@@ -222,8 +239,10 @@ input names_on_conflict {
 ordering options when selecting data from "names"
 """
 input names_order_by {
+  colour: order_by
   id: order_by
   name: order_by
+  number: order_by
 }
 
 """
@@ -231,23 +250,32 @@ select columns of table "names"
 """
 enum names_select_column {
   """column name"""
+  colour
+
+  """column name"""
   id
 
   """column name"""
   name
+
+  """column name"""
+  number
 }
 
 """
 input type for updating data in table "names"
 """
 input names_set_input {
+  colour: String
   id: Int
   name: String
+  number: Int
 }
 
 """aggregate stddev on columns"""
 type names_stddev_fields {
   id: Float
+  number: Float
 }
 
 """
@@ -255,11 +283,13 @@ order by stddev() on columns of table "names"
 """
 input names_stddev_order_by {
   id: order_by
+  number: order_by
 }
 
 """aggregate stddev_pop on columns"""
 type names_stddev_pop_fields {
   id: Float
+  number: Float
 }
 
 """
@@ -267,11 +297,13 @@ order by stddev_pop() on columns of table "names"
 """
 input names_stddev_pop_order_by {
   id: order_by
+  number: order_by
 }
 
 """aggregate stddev_samp on columns"""
 type names_stddev_samp_fields {
   id: Float
+  number: Float
 }
 
 """
@@ -279,11 +311,13 @@ order by stddev_samp() on columns of table "names"
 """
 input names_stddev_samp_order_by {
   id: order_by
+  number: order_by
 }
 
 """aggregate sum on columns"""
 type names_sum_fields {
   id: Int
+  number: Int
 }
 
 """
@@ -291,6 +325,7 @@ order by sum() on columns of table "names"
 """
 input names_sum_order_by {
   id: order_by
+  number: order_by
 }
 
 """
@@ -298,15 +333,22 @@ update columns of table "names"
 """
 enum names_update_column {
   """column name"""
+  colour
+
+  """column name"""
   id
 
   """column name"""
   name
+
+  """column name"""
+  number
 }
 
 """aggregate var_pop on columns"""
 type names_var_pop_fields {
   id: Float
+  number: Float
 }
 
 """
@@ -314,11 +356,13 @@ order by var_pop() on columns of table "names"
 """
 input names_var_pop_order_by {
   id: order_by
+  number: order_by
 }
 
 """aggregate var_samp on columns"""
 type names_var_samp_fields {
   id: Float
+  number: Float
 }
 
 """
@@ -326,11 +370,13 @@ order by var_samp() on columns of table "names"
 """
 input names_var_samp_order_by {
   id: order_by
+  number: order_by
 }
 
 """aggregate variance on columns"""
 type names_variance_fields {
   id: Float
+  number: Float
 }
 
 """
@@ -338,6 +384,7 @@ order by variance() on columns of table "names"
 """
 input names_variance_order_by {
   id: order_by
+  number: order_by
 }
 
 """column ordering options"""
